@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Prova2BLP2BCC/static/css/main.d221dc40.css",
-    "main.js": "/Prova2BLP2BCC/static/js/main.c81bf048.js",
+    "main.js": "/Prova2BLP2BCC/static/js/main.43556b1b.js",
     "index.html": "/Prova2BLP2BCC/index.html",
     "main.d221dc40.css.map": "/Prova2BLP2BCC/static/css/main.d221dc40.css.map",
-    "main.c81bf048.js.map": "/Prova2BLP2BCC/static/js/main.c81bf048.js.map"
+    "main.43556b1b.js.map": "/Prova2BLP2BCC/static/js/main.43556b1b.js.map"
   },
   "entrypoints": [
     "static/css/main.d221dc40.css",
-    "static/js/main.c81bf048.js"
+    "static/js/main.43556b1b.js"
   ]
 }
