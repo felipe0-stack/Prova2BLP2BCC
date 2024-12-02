@@ -10,6 +10,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Função para fazer login
   const fazerLogin = async (e) => {
     e.preventDefault();
     try {
@@ -20,13 +21,18 @@ const Login = () => {
       if (response.data.senhaCorreta) {
         dispatch(setUsuarioAtivo({ nickname }));
         alert('Login bem-sucedido!');
-        navigate('/chat');
+        navigate('/chat');  // Redireciona para o chat após login
       } else {
         alert('Senha incorreta!');
       }
     } catch (error) {
       console.error('Erro ao autenticar', error);
     }
+  };
+
+  // Função para redirecionar para a tela de cadastro de usuário
+  const irParaCadastro = () => {
+    navigate('/users');  // Redireciona para a página de cadastro de usuário
   };
 
   return (
@@ -47,6 +53,12 @@ const Login = () => {
         />
         <button type="submit">Entrar</button>
       </form>
+
+      
+      <button onClick={irParaCadastro}>Cadastro de Usuário</button>
+
+      
+      <button onClick={() => navigate('/chat')}>Ir para o Chat</button>
     </div>
   );
 };

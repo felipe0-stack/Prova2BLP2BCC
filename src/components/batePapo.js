@@ -22,11 +22,11 @@ const SalaDeBatePapo = () => {
     });
   };
 
-  // Função para verificar se a mensagem foi postada há mais de 5 minutos
+  
   const podeExcluir = (dataHora) => {
     const dataMensagem = new Date(dataHora);
     const dataAtual = new Date();
-    const diferencaEmMinutos = (dataAtual - dataMensagem) / (1000 * 60); // Calcula a diferença em minutos
+    const diferencaEmMinutos = (dataAtual - dataMensagem) / (1000 * 60); 
     return diferencaEmMinutos <= 5; // Só pode excluir se for menos de 5 minutos
   };
 
@@ -51,6 +51,11 @@ const SalaDeBatePapo = () => {
     }
   };
 
+  if (!usuarioAtivo) {
+    // Se o usuário não estiver autenticado, exibe uma mensagem de erro
+    return <div>Você precisa fazer login para acessar o bate-papo.</div>;
+  }
+
   return (
     <div>
       <h2>Bate-papo</h2>
@@ -64,7 +69,7 @@ const SalaDeBatePapo = () => {
             </p>
             <small>{adicionarTresHoras(msg.dataHora)}</small>
 
-            {/* Verifica se o usuário que postou a mensagem é o mesmo que está logado e se a mensagem tem menos de 5 minutos */}
+            
             {usuarioAtivo.id === msg.usuario.id && podeExcluir(msg.dataHora) && (
               <button onClick={() => excluirMensagemFormulario(msg.id)}>Excluir</button>
             )}
